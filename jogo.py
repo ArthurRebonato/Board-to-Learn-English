@@ -39,3 +39,20 @@ input_rect = pygame.Rect(250,95,140,32)
 pinoAzul = pygame.image.load('assets/Pino Azul Certo.png')
 pinoVermelho = pygame.image.load('assets/Pino Vermelho Certo.png')
 fundo = pygame.image.load('assets/Fundo com Tabuleiro Certo.png')
+
+palavras_ingles = ["backpack","book","compass","pencil case","calculator","dictionary","eraser","folder",
+"lead","lunchbox","pen","pencil","ruler","paper","scissors","sharpener","brush","crayon","marker","paint",
+"board","alarm clock","bed","blanket","bucket","cup","fork","knife","plate","refrigerator","spoon","clock",
+"couch","curtains","fireplace","lamp","table","telephone","television","shower","garage","door","window",
+"garden","stairs","balcony","porch","roof","doorbell","furniture","bookshelf","cushion","tablecloth",
+"chair","glass","bowl","fridge","cabinet","stove","oven","sink","mattress","mirror","towels","bathtub",
+"toilet paper","computer","printer","desk","trash can","broom","soap","mop"]
+
+traducao_portugues = ["mochila","livro","compasso","estojo","calculadora","dicionario","borracha","pasta",
+"grafite","lancheira","caneta","lapis","regua","papel","tesoura","apontador","pincel","giz de cera",
+"canetinha","tinta","quadro","despertador","cama","cobertor","balde","copo","garfo","faca","prato",
+"geladeira","colher","relogio","sofa","cortinas","lareira","lampada","mesa","telefone","televisao",
+"chuveiro","garagem","porta","janela","jardim","escada","sacada","varanda","telhado","campainha","mobilia",
+"estante de livros","almofada","toalha de mesa","cadeira","vidro","tigela","freezer","armario","fogao",
+"forno","pia","colchao","espelho","toalhas","banheira","papel higienico","computador","impressora",
+"escrivaninha","lixeira","vassoura","sabao","esfregao"]
