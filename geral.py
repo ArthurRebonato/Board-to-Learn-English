@@ -126,3 +126,10 @@ def menu_jogo(game_loop):
 
 		pygame.display.update()
 		clock.tick(15)
+
+def aleatoria(palavras_ingles):
+    aleatoria_ingles = random.choice(palavras_ingles)
+    return aleatoria_ingles
+
+def mostrapino(pino,x,y):
+    gamedisplay.blit(pino,(x,y))
