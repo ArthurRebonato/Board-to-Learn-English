@@ -125,3 +125,7 @@ def game_loop():
                 
         pygame.display.update()
         clock.tick(60)
+
+menu_jogo(game_loop)
+pygame.quit()
+quit()
