@@ -16,3 +16,6 @@ arquivo.write("Email: ")
 arquivo.write(email)
 arquivo.write("\n")
 arquivo.close()
+
+from geral import cria_botao, creditos, regras, sair, menu_jogo, text_objects, mostrapino, message_display
+from geral import analise_resultado, ganhou, perdeu, movimentoPinoAzul, movimentoPinoVermelho, aleatoria
