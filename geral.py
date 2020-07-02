@@ -133,3 +133,25 @@ def aleatoria(palavras_ingles):
 
 def mostrapino(pino,x,y):
     gamedisplay.blit(pino,(x,y))
+
+def message_display(text, tamanho, posicaotextX, posicaotextY, cor):
+    largeText = pygame.font.Font('freesansbold.ttf', tamanho)
+    TextSurf, TextRect =  text_objects(text, largeText, cor)
+    TextRect.center = ((posicaotextX, posicaotextY))
+    gamedisplay.blit(TextSurf, TextRect)
+
+def analise_resultado(text, tamanho, posicaotextX, posicaotextY, cor):
+    largeText = pygame.font.Font('freesansbold.ttf', tamanho)
+    TextSurf, TextRect =  text_objects(text, largeText, cor)
+    TextRect.center = ((posicaotextX, posicaotextY))
+    gamedisplay.blit(TextSurf, TextRect)
+    pygame.display.update()
+    time.sleep(2)
+
+def ganhou():
+    message_display("Você venceu!", 115, 400, 300, BRANCO)
+    pygame.display.update()
+
+def perdeu():
+    message_display("Você perdeu!", 115, 400, 300, BRANCO)
+    pygame.display.update()
