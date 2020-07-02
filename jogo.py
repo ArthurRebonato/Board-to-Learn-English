@@ -56,3 +56,72 @@ traducao_portugues = ["mochila","livro","compasso","estojo","calculadora","dicio
 "estante de livros","almofada","toalha de mesa","cadeira","vidro","tigela","freezer","armario","fogao",
 "forno","pia","colchao","espelho","toalhas","banheira","papel higienico","computador","impressora",
 "escrivaninha","lixeira","vassoura","sabao","esfregao"]
+
+def game_loop():
+    posicaoPinoAzulX = 110 #X começa no 110
+    posicaoPinoAzulY = 180 #Y começa no 180
+    posicaoPinoVermelhoX = 135 #X começa no 135
+    posicaoPinoVermelhoY = 165 #Y começa no 165
+    p1_acertos = 0
+    p2_acertos = 0
+    ganhador = False
+    perdedor = False
+    user_text = ''
+    palavra = aleatoria(palavras_ingles)
+    while True:
+        gamedisplay.fill(BRANCO)
+        gamedisplay.blit(fundo, (0,0))
+
+        pygame.draw.rect(gamedisplay,BRANCO,input_rect,2)
+        text_surface = base_font.render(user_text, True,(0,0,0))
+        gamedisplay.blit(text_surface,(input_rect.x + 5, input_rect.y + 5))
+        input_rect.w = max(100,text_surface.get_width() + 10)
+
+        message_display("Board to Learn English", 60, 400, 35, PRETO)
+        message_display("A palavra é:", 20, 100, 80, BRANCO)
+        message_display(palavra, 20, 220, 80, BRANCO)
+        message_display("Digite sua tradução:", 20, 140, 110, BRANCO)
+        mostrapino(pinoAzul,posicaoPinoAzulX,posicaoPinoAzulY)
+        mostrapino(pinoVermelho,posicaoPinoVermelhoX,posicaoPinoVermelhoY)
+
+        if p2_acertos == 20:
+            perdeu()
+            time.sleep(5)
+            perdedor = True
+        elif p1_acertos == 20:
+            ganhou()
+            time.sleep(5)
+            ganhador = True
+        
+        if perdedor == True:
+            menu_jogo(game_loop)
+        elif ganhador == True:
+            menu_jogo(game_loop)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    posicao = palavras_ingles.index(palavra)
+                    if user_text.lower() == traducao_portugues[posicao]:
+                        analise_resultado("Resposta correta!", 30, 400, 150, BRANCO)
+                        palavra = aleatoria(palavras_ingles)
+                        user_text = ''
+                        p1_acertos += 1
+                        posicaoPinoAzulX, posicaoPinoAzulY = movimentoPinoAzul(p1_acertos, posicaoPinoAzulX, posicaoPinoAzulY)
+                    elif user_text.lower() != traducao_portugues[posicao]:
+                        analise_resultado("Resposta incorreta!", 30, 400, 150, BRANCO)
+                        palavra = aleatoria(palavras_ingles)
+                        user_text = ''
+                        p2_acertos += 1
+                        posicaoPinoVermelhoX, posicaoPinoVermelhoY = movimentoPinoVermelho(p2_acertos, posicaoPinoVermelhoX, posicaoPinoVermelhoY)
+                else:
+                    if event.key == pygame.K_BACKSPACE:
+                        user_text = user_text[:-1]
+                    else:
+                        user_text += event.unicode
+                
+        pygame.display.update()
+        clock.tick(60)

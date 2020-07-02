@@ -39,54 +39,56 @@ def cria_botao(msg, sqr, cor1, cor2, cor_texto, acao=None):
     gamedisplay.blit(surface_texto, rect_texto)
 
 def creditos():
-    sair = False
-    while not sair:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-            if evento.type == pygame.KEYDOWN or evento.type == pygame.MOUSEBUTTONDOWN:
-                sair = True
-        
-        gamedisplay.fill(PRETO)
-        fonte = pygame.font.SysFont('comicsansms', 20)
-        surface_texto, rect_texto = text_objects("Programador: Arthur Rebonato", fonte, BRANCO)
-        rect_texto.center = (400, 200)
-        gamedisplay.blit(surface_texto, rect_texto)
+	sair = False
+	while not sair:
+		for evento in pygame.event.get():
+			if evento.type == pygame.QUIT:
+				pygame.quit()
+				quit()
+			if evento.type == pygame.KEYDOWN or evento.type == pygame.MOUSEBUTTONDOWN:
+				sair = True
 
-        surface_texto, rect_texto = text_objects("Disciplina: Fundamento de Programação", fonte, BRANCO)
-        rect_texto.center = (400, 222)
-        gamedisplay.blit(surface_texto, rect_texto)
+		gamedisplay.fill(PRETO)
+		fonte = pygame.font.SysFont('comicsansms', 20)
+		surface_texto, rect_texto = text_objects("Programador: Arthur Rebonato", fonte, BRANCO)
+		rect_texto.center = (400, 200)
+		gamedisplay.blit(surface_texto, rect_texto)
 
-        surface_texto, rect_texto = text_objects("Versao Python:3.8.2", fonte, BRANCO)
+		surface_texto, rect_texto = text_objects("Disciplina: Fundamentos de Programação", fonte, BRANCO)
+		rect_texto.center = (400, 222)
+		gamedisplay.blit(surface_texto, rect_texto)
+
+		surface_texto, rect_texto = text_objects("Versao Python:3.8.2", fonte, BRANCO)
 		rect_texto.center = (400, 400)
 		gamedisplay.blit(surface_texto, rect_texto)
 
-        surface_texto, rect_texto = text_objects("Versao Pygame: 1.9.6", fonte, BRANCO)
+		surface_texto, rect_texto = text_objects("Versao Pygame: 1.9.6", fonte, BRANCO)
 		rect_texto.center = (400, 461)
 		gamedisplay.blit(surface_texto, rect_texto)
 
-        voltar = fonte.render('Pressione qualquer tecla para voltar ao menu.', False, BRANCO)
+		voltar = fonte.render('Pressione qualquer tecla para voltar ao menu.', False, BRANCO)
 		gamedisplay.blit(voltar, (25, 550))
 
 		pygame.display.update()
 		clock.tick(15)
 
 def regras():
-    sair = False
-    while not sair:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                sair = True
-                pygame.quit()
-                quit()
-            if evento.type == pygame.KEYDOWN or evento.type == pygame.MOUSEBUTTONDOWN:
-                sair = True
-        
-        gamedisplay.fill(PRETO)
-        fonte = pygame.font.SysFont('comicsansms', 20)
+	sair = False
 
-        info1 = fonte.render('O jogo eh praticado em um tabuleiro de 19 casas.', False, (BRANCO))
+	while not sair:
+		for evento in pygame.event.get():
+			if evento.type == pygame.QUIT:
+				sair = True
+				pygame.quit()
+				quit()
+			if evento.type == pygame.KEYDOWN or evento.type == pygame.MOUSEBUTTONDOWN:
+				sair = True
+
+		gamedisplay.fill(PRETO)
+
+		fonte = pygame.font.SysFont('comicsansms', 20)
+
+		info1 = fonte.render('O jogo eh praticado em um tabuleiro de 19 casas.', False, (BRANCO))
 		info2 = fonte.render('A peca anda pra frente quando acertar uma traducao.', False, (BRANCO))
 		info3 = fonte.render('A peca anda uma casa de cada vez.', False, (BRANCO))
 		info4 = fonte.render('O objetivo e chegar no final.', False, (BRANCO))
