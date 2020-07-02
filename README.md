@@ -1,9 +1,11 @@
 # Board-to-Learn-English
 
 Nome: Arthur Rebonato
+
 Email: arthur.rebonato@hotmail.com
 
 Game:
+
 Tema - O jogo tem como tema o ensino de inglês para crianças recém iniciadas na área, tendo como o fundo do game um tema infantil
 
 Objetivo - O jogo tem como objetivo fazer com que os usuários aprendam palavras em inglês apartir de um jogo.
