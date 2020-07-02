@@ -155,3 +155,73 @@ def ganhou():
 def perdeu():
     message_display("Você perdeu!", 115, 400, 300, BRANCO)
     pygame.display.update()
+
+def movimentoPinoVermelho(p2_acertos, posicaoPinoVermelhoX, posicaoPinoVermelhoY):
+    if p2_acertos == 1:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 70
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos > 1 and p2_acertos <= 4:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 100
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 5:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 90
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 6:
+        posicaoPinoVermelhoY = posicaoPinoVermelhoY + 60
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 7:
+        posicaoPinoVermelhoY = posicaoPinoVermelhoY + 55
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 8:
+        posicaoPinoVermelhoY = posicaoPinoVermelhoY + 60
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos > 8 and p2_acertos <= 12:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX - 100
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos > 12 and p2_acertos <= 15:
+        posicaoPinoVermelhoY = posicaoPinoVermelhoY + 55
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos > 15 and p2_acertos <= 18:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 100
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 19:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 75
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    elif p2_acertos == 20:
+        posicaoPinoVermelhoX = posicaoPinoVermelhoX + 70
+        return posicaoPinoVermelhoX, posicaoPinoVermelhoY
+    
+def movimentoPinoAzul(p1_acertos, posicaoPinoAzulX, posicaoPinoAzulY):
+        if p1_acertos == 1:
+            posicaoPinoAzulX = posicaoPinoAzulX + 70
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos > 1 and p1_acertos <= 4:
+            posicaoPinoAzulX = posicaoPinoAzulX + 100
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 5:
+            posicaoPinoAzulX = posicaoPinoAzulX + 70
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 6:
+            posicaoPinoAzulY = posicaoPinoAzulY + 60
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 7:
+            posicaoPinoAzulY = posicaoPinoAzulY + 55
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 8:
+            posicaoPinoAzulY = posicaoPinoAzulY + 60
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos > 8 and p1_acertos <= 12:
+            posicaoPinoAzulX = posicaoPinoAzulX - 100
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos > 12 and p1_acertos <= 15:
+            posicaoPinoAzulY = posicaoPinoAzulY + 55
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos > 15 and p1_acertos <= 18:
+            posicaoPinoAzulX = posicaoPinoAzulX + 100
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 19:
+            posicaoPinoAzulX = posicaoPinoAzulX + 93
+            return posicaoPinoAzulX, posicaoPinoAzulY
+        elif p1_acertos == 20:
+            posicaoPinoAzulX = posicaoPinoAzulX + 95
+            return posicaoPinoAzulX, posicaoPinoAzulY
