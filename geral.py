@@ -17,3 +17,7 @@ gamedisplay = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('Board to Learn English')
 pygame.font.init()
 clock = pygame.time.Clock()
+
+def text_objects(text, font, color):
+    textSurface = font.render(text, True, color)
+    return textSurface, textSurface.get_rect()
